@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "../style.css";
 
 const style = {
   likeButton: {
@@ -42,7 +41,8 @@ export default props => {
   return (
     <span
       className={isFav ? "like-button is-fav" : "like-button"}
-      onClick={() => {
+      onClick={e => {
+        e.stopPropagation();
         toggleFav(isFav);
       }}
     >
